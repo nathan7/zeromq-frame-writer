@@ -2,6 +2,8 @@
 exports = module.exports = writeFrames
 
 function writeFrames(msgs, write, cb) {
+  if (!Array.isArray(msgs))
+    return throw_(new TypeError('messages must be an array'))
   for (var i = 0, len = msgs.length; i < (len - 1); i++)
     writeFrame(msgs[i], false, write)
   return writeFrame(msgs[i], true, write, cb)
@@ -31,4 +33,9 @@ function writeFrame(message, last, write, cb) {
 
   write(header)
   return write(buf, cb)
+}
+
+function throw_(err, cb) {
+  if (cb) return cb(err)
+  throw err
 }
