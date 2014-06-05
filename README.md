@@ -7,14 +7,14 @@
     npm install zeromq-frame-writer
 
 ## API
-### writer(frames, function write(buf, cb), cb)
+### writer(messages, function write(buf, cb), cb)
 
-  Writes the given frames out, converting them to buffers if necessary.
+  Writes the given messages out into frames, converting them to buffers if necessary.
   The callback is passed on to the last write. The return value is that of the last write.
 
-### writer.single(frame, last, function write(buf, cb), cb)
+### writer.single(message, last, function write(buf, cb), cb)
 
 
-  Writes the frame out, converting it a buffer if necessary.
+  Writes the message out into a frame, converting it a buffer if necessary.
   The callback is passed on to the last write. The return value is that of the last write.
 
