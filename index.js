@@ -11,8 +11,8 @@ function writeFrames(msgs, write, cb) {
 
 exports.single = writeFrame
 function writeFrame(message, last, write, cb) {
-  last = !!last
-  var buf = Buffer.isBuffer(message)
+  var more = !last
+    , buf = Buffer.isBuffer(message)
       ? message
       : new Buffer(message)
     , len = buf.length
@@ -29,7 +29,7 @@ function writeFrame(message, last, write, cb) {
     header.writeUInt8(len, 1)
   }
 
-  header[0] = (last << 0) | (long << 1)
+  header[0] = (more << 0) | (long << 1)
 
   write(header)
   return write(buf, cb)
