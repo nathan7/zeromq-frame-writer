@@ -1,6 +1,6 @@
 {
   "name": "zeromq-frame-writer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ZMTP (ZeroMQ Message Transport Protocol) frame writer",
   "main": "index.js",
   "repository": {
