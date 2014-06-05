@@ -5,14 +5,14 @@ function writeFrames(msgs, write, cb) {
   if (!Array.isArray(msgs))
     return throw_(new TypeError('messages must be an array'))
   for (var i = 0, len = msgs.length; i < (len - 1); i++)
-    writeFrame(msgs[i], false, write)
-  return writeFrame(msgs[i], true, write, cb)
+    writeFrame(msgs[i], more, write)
+  return writeFrame(msgs[i], false, write, cb)
 }
 
 exports.single = writeFrame
-function writeFrame(message, last, write, cb) {
-  var more = !last
-    , buf = Buffer.isBuffer(message)
+function writeFrame(message, more, write, cb) {
+  more = !!more
+  var buf = Buffer.isBuffer(message)
       ? message
       : new Buffer(message)
     , len = buf.length
