@@ -1,0 +1,23 @@
+{
+  "name": "zeromq-frame-writer",
+  "version": "1.0.0",
+  "description": "ZMTP (ZeroMQ Message Transport Protocol) frame writer",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nathan7/zeromq-frame-writer.git"
+  },
+  "keywords": [
+    "zeromq",
+    "zmtp",
+    "message",
+    "transport",
+    "protocol"
+  ],
+  "author": "Nathan Zadoks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathan7/zeromq-frame-writer/issues"
+  },
+  "homepage": "https://github.com/nathan7/zeromq-frame-writer"
+}
