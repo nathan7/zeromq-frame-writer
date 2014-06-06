@@ -5,7 +5,7 @@ function writeFrames(msgs, write, cb) {
   if (!Array.isArray(msgs))
     return throw_(new TypeError('messages must be an array'))
   for (var i = 0, len = msgs.length; i < (len - 1); i++)
-    writeFrame(msgs[i], more, write)
+    writeFrame(msgs[i], true, write)
   return writeFrame(msgs[i], false, write, cb)
 }
 
